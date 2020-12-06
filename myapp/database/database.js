@@ -29,7 +29,31 @@ const getAllConfirmed = async () => {
     }
 }
 
+const getAllRecovered = async () => {
+    const sql = `select "3/23/20" as Recovered from covid19_recovered_csv`
+    try {
+        const data = await pool.query(sql);
+        return data;
+    } catch (err) {
+        console.log(err);
+        return null;
+    }
+}
+
+const getAllDeath = async () => {
+    const sql = `select "3/23/20" as Death from covid19_death_csv`
+    try {
+        const data = await pool.query(sql);
+        return data;
+    } catch (err) {
+        console.log(err);
+        return null;
+    }
+}
+
 module.exports = {
     getAllCountry,
-    getAllConfirmed
+    getAllConfirmed,
+    getAllRecovered,
+    getAllDeath
 }

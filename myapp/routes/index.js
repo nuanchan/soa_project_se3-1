@@ -6,6 +6,8 @@ const db = require('../database/database');
 router.get('/', async function(req, res, next) {
   const result = await db.getAllCountry();
   const confirmed = await db.getAllConfirmed();
+  const recovered = await db.getAllRecovered();
+  const death = await db.getAllDeath();
 
   let objectCountry = [];
   for (const key in result.rows) {
@@ -13,6 +15,8 @@ router.get('/', async function(req, res, next) {
       state:result.rows[key].state,
       country:result.rows[key].country,
       confirmed:confirmed.rows[key].confirmed,
+      recovered:recovered.rows[key].recovered,
+      death:death.rows[key].death
     }
   }
   res.render('index', { countrys: objectCountry});
