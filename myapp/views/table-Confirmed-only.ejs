@@ -33,15 +33,12 @@
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Map <span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item">
-            <a class="nav-link" href="table.ejs">Confirmed</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="../table.ejs">Death</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="table.ejs">Recovered</a>
-        </li>
+            <a class="nav-link" href="#">Table</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -54,8 +51,6 @@
                 <th>Province</th>
                 <th>Country</th>
                 <th>Confirmed</th>
-                <th>Recovered</th>
-                <th>Death</th>
               </tr>
             </thead>
             <tbody>
@@ -64,8 +59,6 @@
                     <td><%= data.state %></td>
                     <td><%= data.country %></td>
                     <td><%= data.confirmed %></td>
-                    <td><%= data.recovered %></td>
-                    <td><%= data.death %></td>
                 </tr>
             <% })  %>
             </tbody>
