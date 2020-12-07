@@ -41,8 +41,8 @@
     </nav>
       
       <% resultData.forEach(function(data){ %>
-       <div class="d-flex p-1 bg-primary" style="background-color: white;">
-        <div class=" p-2 mr-2 bg-light border text-center infect" >
+       <div class="d-flex justify-content-center" style="background-color: white;">
+        <div class=" p-2 mr-2 bg-warning border text-center infect" >
             <div>
                 <B>อัตราการติดเชื้อสะสม</B>
                 
@@ -50,14 +50,14 @@
             <%= data.confirm %>
                 <B>คน</B>
         </div>
-        <div class=" p-2 mr-2 bg-light border1 text-center cure">
+        <div class=" p-2 mr-2 bg-success border1 text-center cure">
             <div>
                 <B>อัตราการหายจากโรคสะสม</B>
             </div>
             <%= data.recovered %>
                 <B>คน</B>
         </div>
-        <div class=" p-2 mr-2 bg-light border2 text-center dead">
+        <div class=" p-2 mr-2 bg-danger border2 text-center dead">
             <div>
                 <B>อัตราการเสียชีวิตสะสม</B>
             </div>
@@ -65,8 +65,10 @@
                 <B>คน</B>
         </div>
     </div>
+    
     <div id="mapid"></div>
     <% })  %>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -83,7 +85,7 @@
   
     <script>
         var Icon = new L.Icon({
-            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
             iconSize: [20, 30],
             iconAnchor: [12, 41],
