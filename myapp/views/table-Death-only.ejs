@@ -37,7 +37,7 @@
                 <a class="nav-link" href="/">Map</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Graph">Graph</a>
+                <a class="nav-link" href="graph">Graph</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -64,11 +64,11 @@
               </tr>
             </thead>
             <tbody>
-              <% countrys.forEach(function(data){ %>
+              <% resultData.forEach(function(data){ %>
                 <tr>
                     <td><%= data.state %></td>
                     <td><%= data.country %></td>
-                    <td><%= data.death %></td>
+                    <td><%= data.dead %></td>
                 </tr>
             <% })  %>
             </tbody>
