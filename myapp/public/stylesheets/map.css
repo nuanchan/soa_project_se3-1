@@ -13,23 +13,23 @@
     height: 600px;
     
 }
-.btn-normal {
+.btn-primary {
     color:black;
-    background-color: white;
-    border-color:white;
+    background-color: rgb(62, 184, 255);
+    border-color:rgb(62, 184, 255);
 }
 .btn-warning {
     color: black;
-    background-color:#FFD700;
-    border-color: #FFD700;
+    background-color:#f6d935;
+    border-color: #f6d935;
 }
 .btn-danger {
-    color: white;
-    background-color: #B22222;
-    border-color: #B22222;
+    color: black;
+    background-color: #f30b0b;
+    border-color: #f30b0b;
 }
 .btn-success {
-    color: white;
-    background-color: #008000;
-    border-color: #008000;
+    color: black;
+    background-color: #13d613;
+    border-color: #13d613;
 }
