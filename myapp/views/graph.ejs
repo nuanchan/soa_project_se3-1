@@ -8,7 +8,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+    <style>
+        .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 200px;
+          border: 3px solid green; 
+        }
+        </style>
+</head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="/">Covid-19</a>
@@ -32,7 +41,47 @@
           </ul>
       </div>
       </nav>
-    <canvas id="myChart"></canvas>
+      <br>
+        <div class="card border-secondary mb-3" style="width:800px; margin:0 auto;">
+            <div class="card-header">
+                <h5>Covid - 19 Pie Chart [World]</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="myChart" height="200"></canvas>
+            </div>
+
+            <div>
+
+                <% resultData.forEach(function(data){ %>
+                    <div class="d-flex justify-content-center" style="background-color: white;">
+                     <div class=" p-2 mr-2 bg-warning border text-center infect" >
+                         <div>
+                             <B>อัตราการติดเชื้อสะสม</B>
+                             
+                         </div>
+                         <%= data.confirm %>
+                             <B>คน</B>
+                     </div>
+                     <div class=" p-2 mr-2 bg-danger border2 text-center dead">
+                         <div>
+                             <B>อัตราการเสียชีวิตสะสม</B>
+                         </div>
+                         <%= data.death %>
+                             <B>คน</B>
+                     </div>
+                     <div class=" p-2 mr-2 bg-success border1 text-center cure">
+                         <div>
+                             <B>อัตราการหายจากโรคสะสม</B>
+                         </div>
+                         <%= data.recovered %>
+                             <B>คน</B>
+                     </div>
+                     <% })  %>
+                 </div>
+
+            </div>
+            <br>
+        </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -41,7 +90,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <% resultData.forEach(function(data){ %>
     <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'pie',
@@ -50,7 +99,7 @@
         data: {
             labels: ['Confiremed', 'Death', 'Recovered'],
             datasets: [{
-                backgroundColor: ['green','red','blue'],
+                backgroundColor: ['#ffc107','#dc3545','#28a745'],
                 data: [ '<%= data.confirm %>','<%= data.death %>','<%= data.recovered %>']
             }]
         },
