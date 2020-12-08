@@ -36,9 +36,20 @@ async function getmap(){
 
 }
 
+async function getgraph(){
+    const sql = `select  sum(confirmed_csv."3/23/2020") as confirm , sum(death_csv."3/23/2020") as death , sum(recovered_csv."3/23/2020") as recovered 
+    from city_csv,confirmed_csv,death_csv,recovered_csv
+    where city_csv.num = confirmed_csv.num and city_csv.num = death_csv.num and city_csv.num = recovered_csv.num `
+    const data = await pool.query(sql);
+    console.log(data);
+    return data;
+
+}
+
 module.exports = {
     getdata,
     getsum,
-    getmap
+    getmap,
+    getgraph
 
 }

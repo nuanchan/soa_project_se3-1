@@ -36,4 +36,10 @@ router.get('/table-Recovered-only',async function(req, res, next) {
   res.render('table-Recovered-only', { resultData: result.rows });
 });
 
+router.get('/graph',async function(req, res, next) {
+  const result = await db.getgraph();
+  console.log(result.rows);
+  res.render('graph', { resultData:result.rows });
+});
+
 module.exports = router;
